@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260828">
 
 <script type="application/ld+json">
 {
@@ -49,8 +49,11 @@
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a class="brand" href="#top">
+      <!-- width/height are the *display* size, not the file's: if the stylesheet
+           is ever stale or blocked, the mark still lands at the right size
+           instead of unfolding to its full 640px. -->
       <img class="brand__logo" src="assets/img/ai4sdf-logo.png"
-           alt="AI4SDF 2026" width="640" height="156" decoding="async">
+           alt="AI4SDF 2026" width="115" height="28" decoding="async">
     </a>
 
     <nav class="nav__links" id="nav-links" aria-label="Section navigation">
@@ -812,6 +815,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=20260828" defer></script>
 </body>
 </html>

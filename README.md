@@ -96,7 +96,7 @@ Rồi chép nội dung (trừ `.git/`, `README.md`) vào thư mục web, ví d�
 Mọi đường dẫn trong mã đều **tương đối**, nên đặt ở thư mục con vẫn chạy đúng, không cần rewrite
 rule hay cấu hình base path.
 
-### Cần lưu ý 4 điểm
+### Cần lưu ý 5 điểm
 
 1. **Sửa URL tuyệt đối nếu địa chỉ cuối khác dự kiến.** Trong `<head>` của `index.html` có
    `rel="canonical"`, `og:url` và `og:image` đang trỏ tới `https://conf.hou.edu.vn/ai4sdf/`.
@@ -104,9 +104,23 @@ rule hay cấu hình base path.
    nếu không ảnh xem trước khi chia sẻ Facebook/Zalo sẽ hỏng.
 2. **Kiểu MIME cho `.doc`.** Apache/Nginx mặc định đã có. Riêng **IIS** có thể cần thêm ánh xạ
    `.doc → application/msword`, nếu không nút tải template sẽ trả lỗi 404.
-3. **HTTPS.** Nên bật; trang không có nội dung tải qua `http://` nên không dính cảnh báo
+3. **Bộ nhớ đệm — đọc kỹ mục này.** Máy chủ đang trả `Cache-Control: max-age=315360000`
+   (**10 năm**) cho tệp tĩnh. Nghĩa là sau lần truy cập đầu, trình duyệt người dùng sẽ **không bao
+   giờ tải lại** `style.css` và `main.js` nữa — cập nhật giao diện xong mà người xem vẫn thấy bản
+   cũ, thậm chí vỡ bố cục vì HTML mới ghép với CSS cũ.
+
+   Vì vậy hai tệp này được gọi kèm chuỗi phiên bản:
+   `assets/css/style.css?v=20260828` và `assets/js/main.js?v=20260828`.
+
+   > **Mỗi lần sửa `style.css` hoặc `main.js`, phải đổi con số `?v=` trong `index.html` và
+   > `cfp.html`** (dùng ngày sửa, ví dụ `?v=20260915`). Quên bước này thì thay đổi sẽ không đến
+   > được người dùng cũ.
+
+   Ảnh cũng bị cache 10 năm. Khi thay ảnh, **đổi tên tệp** thay vì ghi đè.
+
+4. **HTTPS.** Nên bật; trang không có nội dung tải qua `http://` nên không dính cảnh báo
    mixed-content.
-4. **Google Fonts.** Ba họ chữ (Sora, Inter, JetBrains Mono) tải từ `fonts.googleapis.com` **về
+5. **Google Fonts.** Ba họ chữ (Sora, Inter, JetBrains Mono) tải từ `fonts.googleapis.com` **về
    trình duyệt người xem**, không phải từ máy chủ — máy chủ không cần ra Internet. Nếu muốn tự
    chủ hoàn toàn: tải font về `assets/fonts/`, thay thẻ `<link>` trong `index.html` và `cfp.html`
    bằng `@font-face`. Giao diện đã khai báo sẵn font dự phòng nên không vỡ nếu font ngoài không
