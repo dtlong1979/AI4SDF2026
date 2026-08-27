@@ -42,7 +42,7 @@
   /* metrics */
   --wrap:1200px;
   --pad:clamp(1.15rem,4.2vw,2.75rem);
-  --nav-h:72px;
+  --nav-h:64px;
   --r-sm:10px;
   --r-md:16px;
   --r-lg:24px;
@@ -154,23 +154,15 @@ strong{color:var(--tx);font-weight:600}
   display:flex;align-items:center;gap:1.5rem;
 }
 
-.brand{display:flex;align-items:center;gap:.65rem;flex:0 0 auto}
-/* The university mark has a transparent knockout, so it must sit on a light
-   disc — dropped straight onto the dark nav it would invert into a negative. */
-.brand__chip{
-  flex:0 0 auto;width:36px;height:36px;border-radius:50%;
-  display:grid;place-items:center;background:#fff;
-  box-shadow:0 0 0 1px rgba(148,175,214,.28),0 5px 16px -8px rgba(0,0,0,.9);
-  transition:box-shadow .3s var(--ease),transform .3s var(--ease);
+/* The conference lockup, in its reversed (light-ink) form. The supplied artwork
+   is dark navy on white — at 1.64:1 against this bar it would be unreadable, so
+   a lightened variant is used here and the original stays for print. */
+.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand__logo{
+  height:28px;width:auto;display:block;
+  transition:transform .3s var(--ease),filter .3s var(--ease);
 }
-.brand:hover .brand__chip{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(34,211,238,.5),0 8px 20px -8px rgba(34,211,238,.45)}
-.brand__chip img{width:25px;height:auto;display:block}
-.brand__text{font-family:var(--f-display);line-height:1;display:flex;align-items:baseline;gap:.4rem}
-.brand__text strong{font-weight:800;letter-spacing:-.02em;font-size:1.06rem;color:var(--tx)}
-.brand__text em{
-  font-style:normal;font-family:var(--f-mono);font-size:.74rem;color:var(--tx-3);
-  padding:.15rem .38rem;border:1px solid var(--line);border-radius:5px;
-}
+.brand:hover .brand__logo{transform:translateY(-1px);filter:brightness(1.12)}
 
 .nav__links{margin-left:auto;display:flex;align-items:center;gap:.15rem}
 .nav__links a{
@@ -706,7 +698,8 @@ strong{color:var(--tx);font-weight:600}
 }
 
 @media (max-width:720px){
-  :root{--nav-h:64px}
+  :root{--nav-h:58px}
+  .brand__logo{height:26px}
   .hero{min-height:auto}
   .hero__title{max-width:none}
   .hero__facts li{flex:1 1 45%;border-right:0;padding-right:.6rem}

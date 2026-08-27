@@ -33,9 +33,24 @@ Hà Nội chiếu gần trùng tâm quả cầu lúc quay chính diện, không 
 rõ ở khoảng một phần ba mỗi vòng quay, hai lần mỗi vòng. Chỉnh dải hiện/ẩn ở hai biến `byDepth` và
 `byGap`; chỉnh kích thước ở `h = size * 0.036`.
 
-**Logo:** nhận diện của Trường có phần cổng là **vùng trong suốt**, nên đặt thẳng lên nền tối sẽ
-biến thành ảnh âm bản. Vì vậy cả ở thanh điều hướng lẫn trên quả cầu, logo đều nằm trên **đĩa
-trắng** — đúng cách trình bày chính thức. Đừng bỏ đĩa trắng đi.
+## Về hai logo trên trang
+
+**Thanh menu — logo hội thảo** (`ai4sdf-logo.png`). Bản gốc là lockup **dọc**: biểu tượng (592 px)
+rồi mới tới chữ "AI4SDF 2026" (103 px). Thu về chiều cao thanh menu thì dòng chữ chỉ còn ~8 px,
+không đọc nổi. Nên tệp đang dùng là **biến thể ngang** dựng lại từ chính artwork gốc: biểu tượng
+bên trái, chữ bên phải, canh giữa theo trục dọc.
+
+Đồng thời mực xanh navy của bản gốc chỉ đạt **1.64:1** so với nền menu — dưới xa ngưỡng 3:1 tối
+thiểu cho hình đồ hoạ, tức là không đọc được chứ không phải xấu. Nên tệp này là **bản đảo sáng**:
+giữ nguyên hình, giữ nguyên hệ màu (xanh dương – xanh lá – sao đỏ), chỉ nâng độ sáng của mực.
+Sao đỏ giữ nguyên vì đã đạt 3.78:1.
+
+> **Giữ bản gốc để in ấn.** Tệp trong kho là bản dành riêng cho nền tối. Khi làm phông, giấy mời
+> hay kỷ yếu, dùng lockup dọc màu gốc, đừng lấy tệp này.
+
+**Quả cầu — dấu Trường ĐH Mở Hà Nội** (`hou-logo.png`). Nhận diện của Trường có phần cổng là **vùng
+trong suốt**, đặt thẳng lên nền tối sẽ thành ảnh âm bản. Vì vậy nó nằm trên **đĩa trắng** — đúng
+cách trình bày chính thức. Đừng bỏ đĩa trắng đi.
 
 ---
 
@@ -49,6 +64,7 @@ AI4SDF 2026/
 │  ├─ css/style.css           Toàn bộ giao diện (biến màu ở đầu file, mục "1. Tokens")
 │  ├─ js/main.js              Nav, scroll-spy, reveal, đếm ngược, 2 canvas hero
 │  ├─ img/
+│  │  ├─ ai4sdf-logo.png      Logo hội thảo, biến thể NGANG + ĐẢO SÁNG (dùng ở thanh menu)
 │  │  ├─ hou-logo.png         Logo Trường ĐH Mở Hà Nội (400×487, nền trong suốt)
 │  │  ├─ favicon.svg          Biểu tượng tab
 │  │  └─ og-cover.png         Ảnh chia sẻ mạng xã hội (1200×630)
