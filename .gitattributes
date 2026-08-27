@@ -1,0 +1,9 @@
+# Keep LF in the repository so the files land clean on the Linux web server.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.doc binary
+*.docx binary
+*.pdf binary
