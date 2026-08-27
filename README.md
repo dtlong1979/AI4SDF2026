@@ -66,15 +66,41 @@ python -m http.server 5177 --directory "D:/dev/AI4SDF 2026"
 Mở `http://localhost:5177`. (Mở thẳng bằng `file://` cũng chạy, chỉ khác là một số trình duyệt
 chặn font Google Fonts khi ở giao thức file.)
 
-## 3. Triển khai
+## 3. Triển khai (dành cho bộ phận kỹ thuật)
 
-Chép **toàn bộ thư mục** (trừ `.claude/` và `README.md`) vào thư mục web, ví dụ
-`conf.hou.edu.vn/ai4sdf/`. Không cần Node, không cần cài đặt gì thêm. Mọi đường dẫn trong mã đều
-là đường dẫn tương đối nên đặt ở thư mục con vẫn chạy đúng.
+**Yêu cầu hạ tầng: không có gì đặc biệt.** Đây là trang tĩnh thuần — không Node, không PHP, không
+CSDL, không tiến trình nền, không biến môi trường. Bất kỳ máy chủ web nào phục vụ tệp tĩnh
+(Apache, Nginx, IIS, hoặc hosting chia sẻ) đều chạy được.
 
-Nếu máy chủ chặn Google Fonts hoặc muốn hoàn toàn tự chủ: tải 3 họ chữ (Sora, Inter, JetBrains
-Mono) về `assets/fonts/`, thay thẻ `<link>` trong `index.html` và `cfp.html` bằng khai báo
-`@font-face`. Giao diện đã khai báo sẵn font dự phòng nên không vỡ nếu font ngoài không tải được.
+```bash
+git clone https://github.com/dtlong1979/AI4SDF2026.git
+```
+
+Rồi chép nội dung (trừ `.git/`, `README.md`) vào thư mục web, ví dụ `conf.hou.edu.vn/ai4sdf/`.
+Mọi đường dẫn trong mã đều **tương đối**, nên đặt ở thư mục con vẫn chạy đúng, không cần rewrite
+rule hay cấu hình base path.
+
+### Cần lưu ý 4 điểm
+
+1. **Sửa URL tuyệt đối nếu địa chỉ cuối khác dự kiến.** Trong `<head>` của `index.html` có
+   `rel="canonical"`, `og:url` và `og:image` đang trỏ tới `https://conf.hou.edu.vn/ai4sdf/`.
+   Ba dòng này **không** tự đổi theo nơi đặt — nếu triển khai ở địa chỉ khác thì phải sửa tay,
+   nếu không ảnh xem trước khi chia sẻ Facebook/Zalo sẽ hỏng.
+2. **Kiểu MIME cho `.doc`.** Apache/Nginx mặc định đã có. Riêng **IIS** có thể cần thêm ánh xạ
+   `.doc → application/msword`, nếu không nút tải template sẽ trả lỗi 404.
+3. **HTTPS.** Nên bật; trang không có nội dung tải qua `http://` nên không dính cảnh báo
+   mixed-content.
+4. **Google Fonts.** Ba họ chữ (Sora, Inter, JetBrains Mono) tải từ `fonts.googleapis.com` **về
+   trình duyệt người xem**, không phải từ máy chủ — máy chủ không cần ra Internet. Nếu muốn tự
+   chủ hoàn toàn: tải font về `assets/fonts/`, thay thẻ `<link>` trong `index.html` và `cfp.html`
+   bằng `@font-face`. Giao diện đã khai báo sẵn font dự phòng nên không vỡ nếu font ngoài không
+   tải được.
+
+### Không có phần nào cần backend
+
+Nút "Submit a paper" mở thư `mailto:` tới `ai4sdf@hou.edu.vn`; không có biểu mẫu nào gửi dữ liệu
+lên máy chủ, không thu thập thông tin cá nhân, không cookie, không script phân tích. Nếu về sau
+cần biểu mẫu nộp bài hoặc đăng ký trực tuyến thì mới phát sinh yêu cầu hạ tầng — xem mục 6.
 
 ## 4. Sửa nội dung ở đâu
 
