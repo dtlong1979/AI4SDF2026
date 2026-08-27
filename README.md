@@ -96,6 +96,17 @@ rule hay cấu hình base path.
    bằng `@font-face`. Giao diện đã khai báo sẵn font dự phòng nên không vỡ nếu font ngoài không
    tải được.
 
+### ĐỪNG xoá đoạn cảm ơn Microsoft CMT ở chân trang
+
+Cuối `index.html` có một đoạn văn bản cảm ơn dịch vụ Microsoft CMT. Đây là **điều kiện bắt buộc**
+để dùng CMT miễn phí: CMT tự tải trang này về và **dò nguyên văn trong mã HTML**. Vì vậy:
+
+- giữ **đúng từng chữ**, không dịch, không rút gọn, không in đậm/nghiêng;
+- giữ ở dạng **HTML tĩnh** — nếu chuyển sang sinh bằng JavaScript thì máy dò của CMT sẽ không thấy;
+- trang phải **truy cập công khai**, không đặt sau đăng nhập.
+
+Xoá hoặc sửa đoạn này có thể khiến CMT khoá site quản lý phản biện của hội thảo.
+
 ### Không có phần nào cần backend
 
 Nút "Submit a paper" mở thư `mailto:` tới `ai4sdf@hou.edu.vn`; không có biểu mẫu nào gửi dữ liệu
