@@ -42,7 +42,7 @@
   /* metrics */
   --wrap:1200px;
   --pad:clamp(1.15rem,4.2vw,2.75rem);
-  --nav-h:64px;
+  --nav-h:72px;
   --r-sm:10px;
   --r-md:16px;
   --r-lg:24px;
@@ -159,7 +159,7 @@ strong{color:var(--tx);font-weight:600}
    a lightened variant is used here and the original stays for print. */
 .brand{display:flex;align-items:center;flex:0 0 auto}
 .brand__logo{
-  height:28px;width:auto;display:block;
+  height:48px;width:auto;display:block;
   transition:transform .3s var(--ease),filter .3s var(--ease);
 }
 .brand:hover .brand__logo{transform:translateY(-1px);filter:brightness(1.12)}
@@ -734,8 +734,8 @@ strong{color:var(--tx);font-weight:600}
 }
 
 @media (max-width:720px){
-  :root{--nav-h:58px}
-  .brand__logo{height:26px}
+  :root{--nav-h:62px}
+  .brand__logo{height:40px}
   .hero{min-height:auto}
   .hero__title{max-width:none}
   .hero__facts li{flex:1 1 45%;border-right:0;padding-right:.6rem}
