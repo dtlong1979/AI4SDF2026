@@ -139,9 +139,10 @@ Xoá hoặc sửa đoạn này có thể khiến CMT khoá site quản lý phả
 
 ### Không có phần nào cần backend
 
-Nút "Submit a paper" mở thư `mailto:` tới `ai4sdf@hou.edu.vn`; không có biểu mẫu nào gửi dữ liệu
-lên máy chủ, không thu thập thông tin cá nhân, không cookie, không script phân tích. Nếu về sau
-cần biểu mẫu nộp bài hoặc đăng ký trực tuyến thì mới phát sinh yêu cầu hạ tầng — xem mục 6.
+Việc nộp bài do **Microsoft CMT** đảm nhiệm, ở địa chỉ
+`https://cmt3.research.microsoft.com/AISDF2026` — lưu ý viết tắt trên CMT là **AISDF**, rụng chữ
+"4", đây không phải lỗi gõ. Trang web chỉ dẫn sang đó, không có biểu mẫu nào gửi dữ liệu lên máy
+chủ, không thu thập thông tin cá nhân, không cookie, không script phân tích.
 
 ## 4. Sửa nội dung ở đâu
 
@@ -186,8 +187,10 @@ trang tự thay bằng chữ lồng (RB / NK) trên nền chuyển sắc — kh�
       đổi, nên đặt làm bản logo rút gọn riêng cho favicon.
 - [ ] Diễn giả toàn thể thứ ba (chương trình có 3 báo cáo chính; hiện để thẻ "To be announced").
 - [ ] Địa điểm cụ thể tại Hà Nội (Call for Papers ghi "to be announced").
-- [ ] Kênh nộp bài: hiện nút "Submit a paper" mở thư tới `ai4sdf@hou.edu.vn`. Nếu dùng EasyChair /
-      Microsoft CMT / biểu mẫu riêng thì thay `href` trong mục `#submit`.
+- [ ] **Xác nhận số thứ tự hội thảo.** Trang CMT ghi "**2nd** Artificial Intelligence & Data
+      Science for a Sustainable Digital Future". Mục nộp bài trên web đã ghi "2nd", nhưng tiêu đề
+      lớn ở hero và trang Call for Papers vẫn chỉ ghi "International Conference on…". Nếu đây đúng
+      là lần thứ hai thì nên thống nhất — nói một câu là tôi sửa.
 - [ ] Số ISBN của kỷ yếu (khi có).
 
 ## 7. Ghi chú về mốc thời gian

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260828">
+<link rel="stylesheet" href="assets/css/style.css?v=20260828b">
 <style>
   /* ---- Call for Papers sheet: a printable one-pager on the same design system ---- */
   .sheet{max-width:900px;margin-inline:auto;padding:calc(var(--nav-h) + 3rem) 0 5rem}
@@ -154,6 +154,25 @@
     </section>
 
     <section>
+      <p class="rule"><span>How to submit</span></p>
+      <p>
+        Papers are submitted through Microsoft CMT at
+        <a class="link-arrow" href="https://cmt3.research.microsoft.com/AISDF2026" target="_blank" rel="noopener">cmt3.research.microsoft.com/AISDF2026</a>
+      </p>
+      <ul class="bullets" style="margin-top:1rem">
+        <li>Sign in to Microsoft CMT and select <strong>Create new submission</strong>.</li>
+        <li>Enter the paper title, abstract, keywords and author information carefully.</li>
+        <li>Select the most appropriate conference track for your paper.</li>
+        <li>Upload your manuscript, prepared according to the AI4SDF 2026 template.</li>
+        <li>Review all submission information before clicking <strong>Submit</strong>.</li>
+      </ul>
+      <p style="margin-top:1.1rem">
+        Authors may update their submission through CMT until the submission deadline. Please ensure
+        that all authors and their affiliations are entered correctly.
+      </p>
+    </section>
+
+    <section>
       <p class="rule"><span>Important dates</span></p>
       <table class="dates">
         <thead><tr><th scope="col">Milestone</th><th scope="col">Date</th></tr></thead>
@@ -209,8 +228,9 @@
     </section>
 
     <div class="sheet__print">
-      <button class="btn btn--primary" onclick="window.print()">Print / save as PDF</button>
-      <a class="btn btn--ghost" href="mailto:ai4sdf@hou.edu.vn?subject=AI4SDF%202026%20—%20Paper%20submission">Submit by email</a>
+      <a class="btn btn--primary" href="https://cmt3.research.microsoft.com/AISDF2026"
+         target="_blank" rel="noopener">Submit through Microsoft CMT</a>
+      <button class="btn btn--ghost" onclick="window.print()">Print / save as PDF</button>
     </div>
 
   </article>
